@@ -1,2 +1,2 @@
-#Taylor Mallory taymal1987@gmail.com
+#Taylor Mallory
 #testies
