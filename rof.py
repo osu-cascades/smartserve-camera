@@ -33,7 +33,7 @@ def denoise(im,U_init,tolerance=0.1,tau=0.125,tv_weight=100):
 	RxPx = roll(Px,1,axis=1) # right x-translation of x-component
 	RyPy = roll(Py,1,axis=0) # right y-translation of y-component
 	DivP = (Px-RxPx)+(Py-RyPy) # divergence of the dual field.
-	24 | Chapter 1: Basic Image Handling and ProcessingU = im + tv_weight*DivP # update of the primal variable
+	U = im + tv_weight*DivP # update of the primal variable
 
 	# update of error
 	error = linalg.norm(U-Uold)/sqrt(n*m);
