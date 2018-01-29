@@ -1,0 +1,3 @@
+/home/sledge/Desktop/smart_serve/CMakeFiles/edit_cache.dir
+/home/sledge/Desktop/smart_serve/CMakeFiles/rebuild_cache.dir
+/home/sledge/Desktop/smart_serve/CMakeFiles/DisplayImage.dir
