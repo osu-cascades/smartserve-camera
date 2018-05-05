@@ -4,13 +4,25 @@ import cv2
 import numpy as np
 
 
+# compute image diffs based on structural similarity
+def compute_diff(A, B):
+    imageA = cv2.imread(A)
+    imageB = cv2.imread(B)
+
+    imageA = cv2.cvtColor(imageA, cv2.COLOR_BGR2GRAY)
+    imageB = cv2.cvtColor(imageB, cv2.COLOR_BGR2GRAY)
+
+    return ssim(imageA, imageB)
+
+
+# mean squared error
 def mse(imageA, imageB):
     err = np.sum((imageA.astype("float") - imageB.astype("float")) ** 2)
     err /= float(imageA.shape[0] * imageB.shape[1])
 
     return err
 
-
+# compute image diffs and render images side by side with scores
 def compare_images(imageA, imageB, title):
     m = mse(imageA, imageB)
     s = ssim(imageA, imageB)

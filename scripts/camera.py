@@ -9,7 +9,7 @@ class Camera:
 
     def __init__(self):
         self.camera = PiCamera()
-        self.resolution = (400, 400)
+        self.camera.resolution = (400, 400)
 
     def prepare_camera(self, preview):
         # if preview is passed we want to use the preview
