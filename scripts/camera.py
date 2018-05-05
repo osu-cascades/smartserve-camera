@@ -1,23 +1,54 @@
 from picamera import PiCamera
-import time
-import requests
-
-def main():
-    url = "http://localhost:3000/upload"
-    filename = get_snapshot()
-    files = { 'media', open(filename, 'rb') }
-    requests.post(url, files)
+from datetime import datetime
+from time import sleep
+from io import BytesIO
+from PIL import Image
 
 
-def get_snapshot():
-    camera = PiCamera()
-    camera.resolution = (1024,768)
+class Camera:
 
-    filename = time.strftime("%Y%m%d-%H%M%S")
-    filename = filename + ".jpg"
+    def __init__(self):
+        self.camera = PiCamera()
+        self.resolution = (400, 400)
 
-    camera.start_preview()
-    # allow camera to warm up
-    time.sleep(2)
-    camera.capture(filename)
-    return filename
+    def prepare_camera(self, preview):
+        # if preview is passed we want to use the preview
+        if preview:
+            self.camera.start_preview()
+
+        # these print statements help for debugging as well as
+        # allowing time for the camera to warm up
+        print("taking picture in")
+        print("3")
+        sleep(1)
+        print("2")
+        sleep(1)
+        print("1")
+        sleep(1)
+
+        # stop the camera's preview
+        if preview:
+            self.camera.stop_preview()
+
+
+    def capture_image(self, preview):
+        filename = datetime.now().isoformat() + ".jpg"
+
+        self.prepare_camera(preview)
+
+        # save the image and return the filename just in case we
+        # want to fetch the same file later
+        self.camera.capture("/home/pi/smartserve/smartserve-camera/captures/%s" % filename)
+        return filename
+
+    def capture_stream(self, preview):
+        stream = BytesIO()
+
+        self.prepare_camera(preview)
+        
+        # save the image to the stream and return it
+        self.camera.capture(stream, format='jpeg')
+        # rewind the stream so we can read its contents
+        stream.seek(0)
+        return Image.open(stream)
+        
