@@ -22,12 +22,12 @@ def capture():
 	sleep(1)
 	camera.stop_preview()
 	# allow time for camera to warm up and focus
-	camera.capture('./captures/%s.jpg' % filename)
+	camera.capture('/home/pi/smartserve/smartserve-camera/captures/%s.jpg' % filename)
 
 button.when_pressed = capture
 
 print("running...")
-insert(22.22)
+
 pause()
 
 
