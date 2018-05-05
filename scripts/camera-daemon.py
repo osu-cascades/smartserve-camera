@@ -3,6 +3,7 @@ from time import sleep
 from gpiozero import Button
 from datetime import datetime
 from signal import pause
+from database import insert
 
 button = Button(17)
 camera = PiCamera()
@@ -26,6 +27,7 @@ def capture():
 button.when_pressed = capture
 
 print("running...")
+insert(22.22)
 pause()
 
 
