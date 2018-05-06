@@ -4,7 +4,7 @@ Smartserve v0.1 utilizes computer vision and image analyses libraries to compute
 
 ## Setup
 
-To use these scripts you will need to install a lot of dependencies. OpenCV is a complex library that requires many other larde python libraries. Run through the Software requierments and the guides I have linked to get OpenCV running on your raspberry pi. Note: I use a virtual environment, while it is recommended it is not a requirement.
+To use these scripts you will need to install a lot of dependencies. OpenCV is a complex library that requires many other large python libraries. Run through the Software requirements and the guides I have linked to get OpenCV running on your raspberry pi. Note: I use a virtual environment, while it is recommended it is not a requirement.
 
 ### Assumptions
 
