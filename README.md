@@ -29,4 +29,4 @@ Checkout [GPIO Zero Recipes](https://gpiozero.readthedocs.io/en/stable/recipes.h
 
 Important note: Some of these libraries take a **long** time to install.
 
-(c) 2018 Taylor Mallory, Justin Tappert, and Yong Bakos. All rights reserved.
+&copy; 2018 Taylor Mallory, Justin Tappert, and Yong Bakos. All rights reserved.
