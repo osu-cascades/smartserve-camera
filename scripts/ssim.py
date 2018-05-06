@@ -1,7 +1,7 @@
 # import matplotlib.pyplot as plt
 from skimage.measure import structural_similarity as ssim
 import cv2
-import numpy as np
+#import numpy as np
 
 
 # compute image diffs based on structural similarity
