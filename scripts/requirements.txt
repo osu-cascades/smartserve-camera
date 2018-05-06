@@ -11,6 +11,7 @@ pyparsing==2.2.0
 python-dateutil==2.7.2
 pytz==2018.4
 PyWavelets==0.5.2
+RPi.GPIO==0.6.3
 scikit-image==0.13.1
 scipy==1.0.1
 six==1.11.0
