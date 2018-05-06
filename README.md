@@ -22,7 +22,7 @@ Checkout [GPIO Zero Recipes](https://gpiozero.readthedocs.io/en/stable/recipes.h
 
 ### Software Requirements
 
-- `cd scripts/ && pip install -r requirements.txt`
+- `pip install -r requirements.txt`
 - OpenCV, I would suggest this guide [Accessing the Raspberry Pi Camera with OpenCV and Python](https://www.pyimagesearch.com/2015/03/30/accessing-the-raspberry-pi-camera-with-opencv-and-python/) for installation and use
 - Sqlite3 `sudo apt-get install sqlite3`
 - We currently have the script running automatically at boot time in order to enable that you will need to run `sudo cp camera.service /etc/systemd/system/camera.service` after you have updated the ExecStart path as well as the WorkingDirectory path. Checkout this guide for more information on Systemd [Creating a Service](https://www.raspberrypi.org/documentation/linux/usage/systemd.md)
