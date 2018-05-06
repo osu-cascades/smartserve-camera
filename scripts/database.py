@@ -4,7 +4,7 @@ from datetime import datetime
 
 def insert(diff, rfid=''):
 	# connect to our sqlite database
-	conn = sqlite3.connect('/home/pi/smartserve/smartserve-camera/smartserve.db')
+	conn = sqlite3.connect('/home/pi/OpenCV/smartserve-camera/smartserve.db')
 	cursor = conn.cursor()
 
 	# create the timestamp
@@ -12,7 +12,8 @@ def insert(diff, rfid=''):
 	
 	# try to insert the data, catch the exception if it doesn't work
 	try:
-		cursor.execute("INSERT INTO plates VALUES (?, ?, ?, ?);", (None, 'N/A', diff, measured_on))
+                cursor.execute("INSERT INTO plates VALUES (?, ?, ?, ?);", (None, 'N/A', diff, measured_on))
+                print("successfully inserted diff")
 	except Exception:
 		print("Something went wrong while inserting data.") 
 		traceback.print_exc()
