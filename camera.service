@@ -1,0 +1,14 @@
+[Unit]
+Description=Smartserve Camera Service
+After=network.target
+
+[Service]
+ExecStart=/home/pi/.virtualenvs/cv/bin/python3 camera-daemon.py
+WorkingDirectory=/home/pi/OpenCV/smartserve-camera/scripts
+StandardOutput=inherit
+StandardError=inherit
+Restart=always
+User=pi
+
+[Install]
+WantedBy=multi-user.target
