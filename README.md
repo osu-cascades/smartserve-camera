@@ -14,6 +14,8 @@ To use these scripts you will need to install a lot of dependencies. OpenCV is a
 
 ### Hardware Requirements
 
+Checkout [GPIO Zero Recipes](https://gpiozero.readthedocs.io/en/stable/recipes.html) for wiring diagrams and common use cases
+
 - Pi Camera Module v2
 - Button
 - Jumper Wires
