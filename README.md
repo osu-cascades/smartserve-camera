@@ -1,29 +1,32 @@
 # SmartServe Camera
 
-TODO description
+Smartserve v0.1 utilizes computer vision and image analyses libraries to compute the difference between images, all on a raspberry pi! The initial prototype will be used to gather data which will then be used to train a machine learning model to calculate the food waste in a restaurant setting. This project is under active development.
 
-# Development
+## Setup
 
-### Rpi 3 instructions
-##### Step 1 - camera
-Connect ribbon camera between HDMI and ethernet ports, making sure silver connectors are facing ethernet.
+To use these scripts you will need to install a lot of dependencies. OpenCV is a complex library that requires many other large python libraries. Run through the Software requirements and the guides I have linked to get OpenCV running on your raspberry pi. Note: I use a virtual environment, while it is recommended it is not a requirement.
 
-##### Step 2 - tactile button
-Connect tactile button to breadboard and jumpers wires to pins 18 and 24 _as shown in image_
-TODO: add tactile button wiring diagram
+### Assumptions
 
-##### Step 3 - software
-Download SmartServe Camera repo to machine and unzip to desired location. 
+- Raspberry Pi 3 model B
+- Running Raspian Jessie (Raspbian Stretch will have slightly different setup steps)
+- `sudo apt-get update && sudo apt-get upgrade` completed
 
-In terminal run `cd to/smartserve/repo`.
+### Hardware Requirements
 
-In your text editor of choice, edit main.py line TODO, by inserting your specific API key. 
+Checkout [GPIO Zero Recipes](https://gpiozero.readthedocs.io/en/stable/recipes.html) for wiring diagrams and common use cases
 
-In terminal run `python main.py`.
+- Pi Camera Module v2
+- Button
+- Jumper Wires
 
-When ready to take a picture, push tactile button.
+### Software Requirements
 
-TODO Check DB to see if camera functionality is working correctly
+- `pip install -r requirements.txt`
+- OpenCV, I would suggest this guide [Accessing the Raspberry Pi Camera with OpenCV and Python](https://www.pyimagesearch.com/2015/03/30/accessing-the-raspberry-pi-camera-with-opencv-and-python/) for installation and use
+- Sqlite3 `sudo apt-get install sqlite3`
+- We currently have the script running automatically at boot time in order to enable that you will need to run `sudo cp camera.service /etc/systemd/system/camera.service` after you have updated the ExecStart path as well as the WorkingDirectory path. Checkout this guide for more information on Systemd [Creating a Service](https://www.raspberrypi.org/documentation/linux/usage/systemd.md)
 
+Important note: Some of these libraries take a **long** time to install.
 
-(c) 2018 Taylor Mallory and Yong Bakos. All rights reserved.
+&copy; 2018 Taylor Mallory, Justin Tappert, and Yong Bakos. All rights reserved.
