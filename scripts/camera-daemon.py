@@ -12,12 +12,13 @@ camera = PiCamera()
 camera.resolution = (416,400)
 count = 0
 
-def capture(image=null):
-    image1 = capture_stream(True)
+def capture():
+	image1 = capture_stream(True)
 	sleep(5)
 	image2 = capture_stream(True)
 	diff = compute_diff(image1, image2)
 	insert(diff)
+	print("Structural difference: %s %%" % (diff*100))
 
 
 def prepare_camera(preview):
