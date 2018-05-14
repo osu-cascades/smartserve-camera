@@ -26,7 +26,7 @@ def capture(image=null):
     image2 = capture_stream(True)
     diff = compute_diff(image1, image2)
     insert(diff)
-	print("Structural difference: %s %%" % (diff*100))
+    print("Structural difference: %s %%" % (diff*100))
 
 
 def prepare_camera(preview):
@@ -37,6 +37,10 @@ def prepare_camera(preview):
         # these print statements help for debugging as well as
         # allowing time for the camera to warm up
         print("taking picture in")
+        print("5")
+        sleep(1)
+        print("4")
+        sleep(1)
         print("3")
         sleep(1)
         print("2")
