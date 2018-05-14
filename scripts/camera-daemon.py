@@ -10,14 +10,22 @@ import cv2
 button = Button(17)
 camera = PiCamera()
 camera.resolution = (416,400)
-count = 0
 
 def capture(image=null):
+    # create flag to track second button click
+    secondClick = False
+    # take the first image
     image1 = capture_stream(True)
-	sleep(5)
-	image2 = capture_stream(True)
-	diff = compute_diff(image1, image2)
-	insert(diff)
+
+    while secondClick == False:
+        # pauses the script until button is pressed again
+        button.wait_for_press(timeout=None)
+        secondClick = True
+        
+    # take second picture and compute
+    image2 = capture_stream(True)
+    diff = compute_diff(image1, image2)
+    insert(diff)
 
 
 def prepare_camera(preview):
