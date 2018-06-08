@@ -26,7 +26,8 @@ To use these scripts you will need to install a lot of dependencies. OpenCV is a
 - `pip install -r requirements.txt`
     - if the above command fails for some reason, just install the dependencies one at a time
 - Sqlite3 `sudo apt-get install sqlite3`
-- We currently have the script running automatically at boot time in order to enable that you will need to run `sudo cp camera.service /etc/systemd/system/camera.service` after you have updated the ExecStart path as well as the WorkingDirectory path. Checkout this guide for more information on Systemd [Creating a Service](https://www.raspberrypi.org/documentation/linux/usage/systemd.md)
+- `python setup.py`
+- If the above command completes, you should be able to run the smart serve program by double clicking the desktop icon. If it fails, run through the commands in `setup.py` manually and retry. If you are having issues checkout this guide: [Creating a Service](https://www.raspberrypi.org/documentation/linux/usage/systemd.md)
 
 Important note: Some of these libraries take a **long** time to install.
 
