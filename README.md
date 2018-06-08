@@ -14,7 +14,7 @@ To use these scripts you will need to install a lot of dependencies. OpenCV is a
 
 ### Hardware Requirements
 
-Checkout [GPIO Zero Recipes](https://gpiozero.readthedocs.io/en/stable/recipes.html) for wiring diagrams and common use cases
+![Wiring Diagram](files\wiring.png)
 
 - Pi Camera Module v2
 - Button
@@ -22,11 +22,12 @@ Checkout [GPIO Zero Recipes](https://gpiozero.readthedocs.io/en/stable/recipes.h
 
 ### Software Requirements
 
+- OpenCV, follow this guide: [Accessing the Raspberry Pi Camera with OpenCV and Python](https://www.pyimagesearch.com/2015/03/30/accessing-the-raspberry-pi-camera-with-opencv-and-python/) for installation and use
 - `pip install -r requirements.txt`
-- OpenCV, I would suggest this guide [Accessing the Raspberry Pi Camera with OpenCV and Python](https://www.pyimagesearch.com/2015/03/30/accessing-the-raspberry-pi-camera-with-opencv-and-python/) for installation and use
+    - if the above command fails for some reason, just install the dependencies one at a time
 - Sqlite3 `sudo apt-get install sqlite3`
 - We currently have the script running automatically at boot time in order to enable that you will need to run `sudo cp camera.service /etc/systemd/system/camera.service` after you have updated the ExecStart path as well as the WorkingDirectory path. Checkout this guide for more information on Systemd [Creating a Service](https://www.raspberrypi.org/documentation/linux/usage/systemd.md)
 
 Important note: Some of these libraries take a **long** time to install.
 
-&copy; 2018 Taylor Mallory, Justin Tappert, and Yong Bakos. All rights reserved.
+&copy; 2018 Justin Tappert, and Yong Bakos. All rights reserved.
