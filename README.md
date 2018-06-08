@@ -22,7 +22,7 @@ To use these scripts you will need to install a lot of dependencies. OpenCV is a
 
 ### Software Requirements
 
-- OpenCV, follow this guide: [Accessing the Raspberry Pi Camera with OpenCV and Python](https://www.pyimagesearch.com/2016/04/18/install-guide-raspberry-pi-3-raspbian-jessie-opencv-3/) for installation and use
+- OpenCV, follow this guide: [Accessing the Raspberry Pi Camera with OpenCV and Python](https://www.pyimagesearch.com/2016/04/18/install-guide-raspberry-pi-3-raspbian-jessie-opencv-3/) for installation and use. This guide, _and this project_, use virtualenv and virtualenvwrapper. Follow the instructions in the guide to setup both and name your virtual environment _'smart'_. If you name it some else, you will have to update the paths in `scripts/Camera.sh` to use your virtualenv's name.
 - `pip install -r requirements.txt`
     - if the above command fails for some reason, just install the dependencies one at a time
 - Sqlite3 `sudo apt-get install sqlite3`
