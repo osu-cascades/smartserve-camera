@@ -29,7 +29,7 @@ To use these scripts you will need to install a lot of dependencies. OpenCV is a
 - `python setup.py`
 - If the above command completes, you should be able to run the smart serve program by double clicking the desktop icon. If it fails, run through the commands in `setup.py` manually and retry. If you are having issues checkout this guide: [Creating a Service](https://www.raspberrypi.org/documentation/linux/usage/systemd.md)
 
-Important note: Some of these libraries take a **long** time to install.
+Important note: Some of these libraries take a **long** time to install. OpenCV compilation can take **72mins+**, installing scikit-image can take **40mins+**
 
 ### Test Scripts
 
