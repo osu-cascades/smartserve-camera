@@ -4,7 +4,7 @@ from datetime import datetime
 
 def insert(diff, rfid=''):
 	# connect to our sqlite database
-	conn = sqlite3.connect('/home/pi/OpenCV/smartserve-camera/smartserve.db')
+	conn = sqlite3.connect('/home/pi/smartserve-camera/smartserve.db')
 	cursor = conn.cursor()
 
 	# create the timestamp
@@ -25,7 +25,6 @@ def insert(diff, rfid=''):
 
 def main():
         print("insterting...")
-        insert(22.22)
 
 
 if __name__ == '__main__':

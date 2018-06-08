@@ -11,7 +11,7 @@ button = Button(17)
 camera = PiCamera()
 camera.resolution = (416,400)
 
-def capture(image=null):
+def capture():
     # create flag to track second button click
     secondClick = False
     # take the first image
