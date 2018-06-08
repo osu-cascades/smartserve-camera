@@ -1,7 +1,7 @@
 [Desktop Entry]
 Name=Smart Serve
 Comment=Fire up the smart serve camera!
-Exec=/home/pi/OpenCV/smartserve-camera/scripts/Camera.sh
-Icon=/home/pi/Documents/download.png
+Exec=/home/pi/smartserve-camera/scripts/Camera.sh
+Icon=/home/pi/smartserve-camera/files/osu.png
 Terminal=true
 Type=Application
