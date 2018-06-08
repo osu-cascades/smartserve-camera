@@ -16,7 +16,7 @@ To use these scripts you will need to install a lot of dependencies. OpenCV is a
 
 ![Wiring Diagram](files/wiring.png)
 
-- Pi Camera Module v2
+- Pi Camera Module v2 [Camera Setup Guide](https://projects.raspberrypi.org/en/projects/getting-started-with-picamera)
 - Button
 - Jumper Wires
 
@@ -29,5 +29,17 @@ To use these scripts you will need to install a lot of dependencies. OpenCV is a
 - We currently have the script running automatically at boot time in order to enable that you will need to run `sudo cp camera.service /etc/systemd/system/camera.service` after you have updated the ExecStart path as well as the WorkingDirectory path. Checkout this guide for more information on Systemd [Creating a Service](https://www.raspberrypi.org/documentation/linux/usage/systemd.md)
 
 Important note: Some of these libraries take a **long** time to install.
+
+### Test Scripts
+
+Within the scripts folder there are a couple of programs to test the components of the working system. To test that the button is working run
+
+`python button_test.py`
+
+You should see 'button not pressed' repeating on the console. When you press the button it will print 'button' pressed. To test the camera run
+
+`python camera_test.py`
+
+and then click the button and a picture will be saved to `/home/pi/`
 
 &copy; 2018 Justin Tappert, and Yong Bakos. All rights reserved.
