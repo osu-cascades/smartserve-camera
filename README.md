@@ -22,7 +22,7 @@ To use these scripts you will need to install a lot of dependencies. OpenCV is a
 
 ### Software Requirements
 
-- OpenCV, follow this guide: [Accessing the Raspberry Pi Camera with OpenCV and Python](https://www.pyimagesearch.com/2015/03/30/accessing-the-raspberry-pi-camera-with-opencv-and-python/) for installation and use
+- OpenCV, follow this guide: [Accessing the Raspberry Pi Camera with OpenCV and Python](https://www.pyimagesearch.com/2016/04/18/install-guide-raspberry-pi-3-raspbian-jessie-opencv-3/) for installation and use
 - `pip install -r requirements.txt`
     - if the above command fails for some reason, just install the dependencies one at a time
 - Sqlite3 `sudo apt-get install sqlite3`
