@@ -36,7 +36,7 @@ Within the scripts folder there are a couple of programs to test the components 
 
 `python button_test.py`
 
-You should see 'button not pressed' repeating on the console. When you press the button it will print 'button' pressed. To test the camera run
+You should see 'button not pressed' repeating on the console. When you press the button it will print 'button pressed'. To test the camera run
 
 `python camera_test.py`
 
