@@ -14,7 +14,7 @@ To use these scripts you will need to install a lot of dependencies. OpenCV is a
 
 ### Hardware Requirements
 
-![Wiring Diagram](files\wiring.png)
+![Wiring Diagram](files/wiring.png)
 
 - Pi Camera Module v2
 - Button
