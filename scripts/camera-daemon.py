@@ -12,22 +12,7 @@ camera = PiCamera()
 camera.resolution = (416,400)
 
 def capture():
-    # create flag to track second button click
-    secondClick = False
-    # take the first image
-    image1 = capture_stream(True)
-
-    while secondClick == False:
-        # pauses the script until button is pressed again
-        button.wait_for_press(timeout=None)
-        secondClick = True
-        
-    # take second picture and compute
-    image2 = capture_stream(True)
-    diff = compute_diff(image1, image2)
-    insert(diff)
-    print("Structural difference: %s %%" % (diff*100))
-
+    return capture_stream(True)
 
 def prepare_camera(preview):
         # if preview is passed we want to use the preview
@@ -67,12 +52,36 @@ def compute_diff(A, B):
     return ssim(imageA, imageB)
 
 
-button.when_pressed = capture
-
-print("running...")
-
-pause()
-
-
-
-
+def main():
+    picture_count = 0
+    print("picture count ", picture_count)
+    while True:
+        global picture_count
+        print("running...")
+        # wait for the first picture
+        button.wait_for_press(timeout=None)
+        # take the irst picture after button pressed
+        image1 = capture()
+        print("picture count ", picture_count)
+        # increment picture count
+        picture_count = picture_count + 1
+        print("Waiting for second picture")
+        # wait for second picture
+        button.wait_for_press(timeout=None)
+        # take the second image
+        image2 = capture()
+        print("picture count ", picture_count)
+        # increment picture count
+        picture_count = picture_count + 1
+        # when two pictures have been taken, compute the difference 
+        if(picture_count == 2):
+            # reset the picture count
+            picture_count = 0
+            # compute the difference
+            diff = compute_diff(image1, image2)
+            # insert the difference into the database
+            insert(diff)
+            print("Structural difference: %s %%" % (diff*100))
+            
+if __name__== "__main__":
+    main()
